@@ -1,0 +1,13 @@
+Installation:
+-------------
+-> download win 64 bit version from mongodb.org
+-> unzip and issue following commands
+   D:\set up\mongodb:\>md data\db
+   D:\set up\mongodb\bin>mongod.exe --dbpath "d:\set up\mongodb\data" 
+   above cmd connects to mongodb server.
+
+-> now open one more cmd prompt and issue below command
+   D:\set up\mongodb\bin>mongo.exe
+
+
+

@@ -1,0 +1,27 @@
+CRUD operations:
+---------------
+1)db.test.find({age:{$gt:18}}).sort({age:1})
+
+2)db.test.insert(
+		{
+		  name: "pratap",
+		  age:26,
+		  status:"A",
+		  groups:["news", "sports"]
+		}
+	       )
+
+Bulk insert:-
+var bulk = db.items.initializeUnorderedBulkOp();
+bulk.insert( { _id: 1, item: "abc123", status: "A", soldQty: 5000 } );
+bulk.insert( { _id: 2, item: "abc456", status: "A", soldQty: 150 } );
+bulk.insert( { _id: 3, item: "abc789", status: "P", soldQty: 0 } );
+bulk.execute( { w: "majority", wtimeout: 5000 } );
+
+3)db.test.update({age:{$gt:18}},
+		 {$set:{status:"A"}},
+		 {multi:true}
+		)
+
+4)db.test.remove({sttus:"D"})
+

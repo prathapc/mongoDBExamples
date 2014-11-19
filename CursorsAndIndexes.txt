@@ -1,0 +1,16 @@
+
+CURSORS:
+-------
+->var c = db.test.find()
+
+->while(c.hasNext()) printjson(c.next) OR directly printjson(c[4])
+
+
+Indexes (query optimization):
+----------------------------
+var typeValue = <some value>;
+db.test.find({type: typeValue});
+
+We can improve above query using indexes (by adding asc or dsc index) as below:
+
+db.test.ensureIndex({type:1})
